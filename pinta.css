@@ -1,0 +1,120 @@
+/* Estilos generales para el cuerpo */
+body {
+    font-family: Arial, sans-serif; /* Fuente general de la página */
+    margin: 0; /* Sin margen */
+    padding: 0; /* Sin relleno */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Estilos del encabezado */
+header {
+    background: linear-gradient(135deg, #ff0000, #b30000); /* Fondo degradado rojo oscuro */
+    padding: 20px; /* Relleno alrededor del texto */
+    text-align: center; /* Centrar texto */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra para efecto de profundidad */
+}
+
+/* Estilos de la navegación */
+nav ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin relleno */
+    margin: 10px 0; /* Margen vertical */
+}
+
+nav ul li {
+    display: inline; /* Disposición en línea */
+    margin: 0 15px; /* Espaciado entre enlaces */
+}
+
+nav a {
+    color: #39ff14; /* Color de texto neón */
+    text-decoration: none; /* Sin subrayado */
+    padding: 5px 10px; /* Relleno para los enlaces */
+    border: 2px solid transparent; /* Borde transparente para el efecto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav a:hover {
+    color: #fff; /* Cambia a blanco al pasar el mouse */
+    background-color: #ff0000; /* Fondo rojo al pasar el mouse */
+    border-color: #39ff14; /* Borde neón verde */
+}
+
+/* Estilos para el carrusel */
+.carousel {
+    position: relative; /* Posicionamiento relativo */
+    overflow: hidden; /* Ocultar contenido que se desborda */
+}
+
+/* Contenedor del carrusel */
+.carousel-container {
+    display: flex; /* Disposición en fila */
+    animation: slide 10s infinite; /* Animación de deslizamiento */
+}
+
+/* Estilo de las imágenes en el carrusel */
+.carousel-image {
+    width: 100%; /* Ancho completo del contenedor */
+    max-width: 100%; /* No exceder el tamaño del contenedor */
+    border: 5px solid #39ff14; /* Bordes neón verdes */
+    object-fit: cover; /* Mantener la proporción de las imágenes */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Sombra en imágenes */
+}
+
+/* Efecto de animación para el carrusel */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Estilos de la sección de información */
+.info {
+    padding: 20px; /* Relleno */
+    background: rgba(255, 0, 0, 0.1); /* Fondo rojo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    margin: 20px; /* Margen */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+}
+
+/* Estilo para el texto de la información */
+.info h2 {
+    color: #ff0000; /* Color rojo para el encabezado */
+}
+
+/* Estilos del pie de página */
+footer {
+    background-color: #333; /* Fondo gris oscuro */
+    text-align: center; /* Centrar texto */
+    padding: 10px; /* Relleno */
+    color: #ff0000; /* Texto rojo */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header {
+        padding: 15px; /* Menos relleno en pantallas pequeñas */
+    }
+
+    .info {
+        padding: 15px; /* Menos relleno en pantallas pequeñas */
+    }
+
+    .carousel-image {
+        border: 3px solid #39ff14; /* Bordes más delgados en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .info h2 {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño para subtítulos */
+    }
+}

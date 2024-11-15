@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>SISTEMA DE SONIDO AERO 38</title>
+</head>
+<body>
+    <header>
+        <!-- Video de fondo -->
+        <video class="background-video" autoplay muted loop>
+            <source src="video1.mp4" type="video/mp4">
+           
+        </video>
+
+        <!-- Contenido sobre el video -->
+        <img src="aero 38 sonido logo.png" alt="Logo" class="logo">
+        <h1 class="neon-title">SISTEMA DE SONIDO E ILUMINACION </h1>
+    </header>
+
+    <!-- Menú -->
+    <nav>
+        <!-- Lista de navegación -->
+        <ul class="horizontal-list">
+           
+            <li class="button-item"><a href="informa,html.html">INFORMACION</a></li>
+            <li class="button-item"><a href="otro.html">EQUIPO DE SONIDO</a></li>
+            <li class="button-item"><a href="pagina1.html">SOLICITUD</a></li>
+        </ul>
+
+        <!-- Imagen del menú que aparece cuando los botones están ocultos -->
+        <img src="menu.png" alt="Menú Móvil" class="image-menu" onclick="toggleMenu()">
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Video de fondo para el main (manteniendo el video de fondo aquí) -->
+        <video class="main-video-background" autoplay muted loop>
+            <source src="video2.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <!-- Sección del carrusel -->
+        <section class="carousel">
+            <div class="carousel-container">
+                <img src="foto1.jpg" alt="Imagen 1" class="carousel-image">
+                <img src="foto2.jpg" alt="Imagen 2" class="carousel-image">
+                <img src="foto3.jpg" alt="Imagen 3" class="carousel-image">
+                <img src="foto4.jpg" alt="Imagen 4" class="carousel-image">
+                <img src="foto5.jpg" alt="Imagen 5" class="carousel-image">
+                <img src="foto6.jpg" alt="Imagen 6" class="carousel-image">
+                <img src="foto7.jpg" alt="Imagen 7" class="carousel-image">
+                <img src="foto8.jpg" alt="Imagen 8" class="carousel-image">
+                <img src="foto9.jpg" alt="Imagen 9" class="carousel-image">
+                <img src="foto10.jpg" alt="Imagen 10" class="carousel-image">
+            </div>
+        </section>
+    </main>
+
+    <!-- Nuevo Nav de redes sociales, ahora debajo del main -->
+    <nav class="social-nav">
+        <!-- Lista de enlaces para redes sociales -->
+        <ul class="horizontal-list">
+            <li class="button-item">
+                <a href="https://wa.me/+59172586614" target="_blank">
+                    <img src="wats.png" alt="WhatsApp" class="social-icon">
+                </a>
+            </li>
+            <li class="button-item">
+                <a href="https://www.tiktok.com/@aero38.calidad.en" target="_blank">
+                    <img src="tiktok.png" alt="TikTok" class="social-icon">
+                </a>
+            </li>
+            <li class="button-item">
+                <a href="https://www.facebook.com/Aero38sonido" target="_blank">
+                    <img src="facebook.png" alt="Facebook" class="social-icon">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; CALIDAD EN ILUMINACION Y AUDIO SONIDO AERO 38</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0; // Índice de la imagen actual
+        const slides = document.querySelectorAll(".carousel-image"); // Selecciona todas las imágenes
+        const totalSlides = slides.length; // Total de imágenes
+
+        // Función para cambiar la imagen del carrusel automáticamente
+        function changeSlide() {
+            // Ocultar la imagen actual
+            slides[currentSlide].classList.remove("visible");
+
+            // Actualizar el índice de la imagen actual
+            currentSlide = (currentSlide + 1) % totalSlides; // Incrementa el índice y vuelve al inicio cuando llega al final
+
+            // Mostrar la siguiente imagen
+            slides[currentSlide].classList.add("visible");
+        }
+
+        // Inicializar el carrusel cambiando de imagen cada 5 segundos
+        setInterval(changeSlide, 5000); // Cambiar cada 5 segundos
+
+        // Asegurarse de que la primera imagen sea visible desde el inicio
+        slides[currentSlide].classList.add("visible");
+    </script>
+</body>
+</html>
+

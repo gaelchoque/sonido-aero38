@@ -1,0 +1,258 @@
+/* Estilo base del body */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, black, red, black);
+    color: white;
+}
+
+/* Estilo para el encabezado */
+header {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    font-family: chiller;
+    box-shadow: 0 4px 10px red;
+    height: 100vh; /* Asegura que el header ocupe toda la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Video de fondo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video ocupe toda la pantalla */
+    z-index: -1; /* Envía el video detrás del contenido */
+}
+
+/* Logo y Título */
+.logo {
+    width: 70%; /* Responsivo: tamaño relativo al ancho */
+    max-width: 700px; /* No puede ser más grande de 700px */
+    animation: logoBounce 2s ease-in-out infinite; /* Animación de rebote para el logo */
+}
+
+.neon-title {
+    font-family: 'chiller', sans-serif;
+    font-size: 5vw; /* Tamaño dinámico en función del ancho de la pantalla */
+    margin: 10px 0;
+    text-shadow: 
+        0 0 5px #FF5733, 
+        0 0 10px #FF5733, 
+        0 0 20px #FFC300, 
+        0 0 30px #FFC300;
+    color: rgb(255, 87, 51); /* RGB color para título */
+    animation: neonEffect 1.5s alternate infinite;
+}
+
+/* Animación de color RGB para el título */
+@keyframes neonEffect {
+    0% { color: rgb(255, 87, 51); }
+    50% { color: rgb(255, 195, 0); }
+    100% { color: rgb(0, 255, 0); }
+}
+
+/* Animación de rebote para el logo */
+@keyframes logoBounce {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para la navegación */
+nav {
+    background: linear-gradient(to right, black, rgb(10, 88, 112), black); /* Fondo con gradiente de negro a azul */
+    height: 80px;
+    text-align: center;
+    color: rgb(255, 250, 250);
+    margin-top: 0px; /* Margen superior para alejarlo del header */
+    display: flex; /* Usamos flexbox en el nav para asegurarnos de que todo esté centrado */
+    justify-content: center; /* Centrado horizontal de los elementos del nav */
+    align-items: center; /* Centrado vertical de los elementos del nav */
+    position: relative; /* Asegura que la imagen esté en el nav y no se solape con otros elementos */
+}
+
+/* Estilo para la lista de navegación */
+ul.horizontal-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Mantiene los elementos de la lista en una línea */
+    justify-content: center; /* Centrado horizontal de los botones */
+    align-items: center; /* Centrado vertical de los botones */
+    gap: 20px; /* Espacio entre los botones */
+}
+
+/* Estilo de los botones (modificado para que sean transparentes con sombra RGB) */
+li.button-item {
+    background-color: transparent; /* Fondo transparente */
+    color: rgb(255, 255, 255); /* Texto en blanco */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px 2px rgb(255, 87, 51); /* Sombra RGB */
+}
+
+/* Eliminar subrayado en los enlaces */
+li.button-item a {
+    text-decoration: none;
+    color: inherit; /* Mantener el color del texto del botón */
+}
+
+/* Efecto al pasar el mouse por encima */
+li.button-item:hover {
+    background-color: rgba(0, 255, 0, 0.2); /* Fondo verde con transparencia */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 4px rgb(255, 195, 0); /* Sombra más fuerte */
+}
+
+/* Efecto al hacer clic */
+li.button-item:active {
+    background-color: transparent;
+    transform: scale(0.95);
+    box-shadow: 0 0 15px 4px rgb(0, 255, 0); /* Sombra cuando se hace clic */
+}
+
+/* Imagen del menú en pantallas pequeñas */
+.image-menu {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px; /* Ajusta el tamaño de la imagen */
+    cursor: pointer;
+}
+
+/* Estilo principal */
+main {
+    position: relative;
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+    border-radius: 25px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Video de fondo para el main */
+.main-video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video ocupe toda la pantalla */
+    z-index: -1; /* Envía el video detrás del contenido */
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 1s ease-in-out; /* Desplazamiento suave entre imágenes */
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajuste para mostrar la imagen completa */
+    display: none; /* Inicialmente las imágenes están ocultas */
+    opacity: 0; /* Inicialmente invisibles */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transición suave de opacidad */
+}
+
+.carousel-image.visible {
+    display: block; /* Muestra solo la imagen actual */
+    opacity: 1; /* Vuelve la imagen visible */
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #FF5733, #FFC300);
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    font-family: fantasy;
+}
+
+/* Estilo para el nuevo nav de redes sociales */
+nav.social-nav {
+    background: linear-gradient(to right, black, rgb(10, 88, 112), black);
+    padding: 20px 0;
+}
+
+/* Estilo para los iconos de redes sociales */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    /* Ocultar los botones en pantallas pequeñas */
+    ul.horizontal-list {
+        display: none;
+    }
+
+    /* Mostrar la imagen en lugar de los botones cuando el menú esté oculto */
+    .image-menu {
+        display: block; /* Ahora aparece en pantallas pequeñas */
+    }
+
+    /* Modificar el tamaño del logo en dispositivos móviles */
+    .logo {
+        width: 150px;
+    }
+
+    /* Adaptar el carrusel para móviles */
+    .carousel-container {
+        flex-direction: column;
+    }
+
+    .carousel-image {
+        height: 200px;
+    }
+}
+
+/* Media Query para pantallas grandes (esconde la imagen del menú) */
+@media (min-width: 601px) {
+    /* Ocultar la imagen del menú en pantallas grandes */
+    .image-menu {
+        display: none;
+    }
+}
